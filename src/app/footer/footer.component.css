@@ -1,0 +1,30 @@
+.footer {
+    padding: 5px;
+    text-align: center;
+    background: #FF2A2A;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    padding: 5px;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+    
+}
+
+.flex-item-1 {
+    flex: 1;
+    max-width: 400px;
+    
+}

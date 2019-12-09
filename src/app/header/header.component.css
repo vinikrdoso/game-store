@@ -1,0 +1,54 @@
+.header {
+    padding: 5px;
+    text-align: center;
+    background: #FF2A2A;
+    color: white;
+    font-size: 30px;
+    font-family: 'vcr', serif;
+}
+
+.header2 {
+    padding-right: 10px;
+    font-family: 'vcr', serif;
+    font-size: 20px;
+}
+
+.logo {
+    width: 150px;
+    padding: 5px;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+    
+}
+
+.flex-item-1 {
+    flex: 1;
+    max-width: 400px;
+    
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+}
+
+.cart-text {
+    font-size: 20px;
+}
+
+.zerarCarrinhoBtn {
+    font-family: 'vcr', serif;
+    color: #fff;
+    font-size: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.zerarCarrinhoBtn:hover {
+    transform: scale(1.1);
+}

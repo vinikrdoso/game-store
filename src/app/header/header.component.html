@@ -1,0 +1,26 @@
+<header>
+    <nav class="header navbar navbar-expand-lg navbar-dark default-color">
+        <div class="container">
+            <img src="assets/images/logo2.png" class="logo">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item active">
+                        <p class="cart-text">Quantidade carrinho: {{carrinho.quantidade}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-nav" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <p class="cart-text">Total carrinho: {{carrinho.total}}</p>
+                    </li>
+                    <button class="zerarCarrinhoBtn btn btn-success" type="button" (click)="zerarCarrinho(carrinho)"
+                        mat-button>Zerar Carrinho
+                    </button>
+                </ul>
+            </div>
+        </div>
+        </nav>
+</header>

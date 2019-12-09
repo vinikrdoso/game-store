@@ -1,0 +1,40 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="container flex main-headline">Lista de DispRespCod</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let game of games" class="lista-jogos col-md-4">
+                <mat-card>
+                    <div class="col-lg-12">
+                        <img [src]="game.img" class="gameImg">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-card-content class="text-center">
+                                    <h2 class="gameTitle">{{ game.title }}</h2>
+                                    <h3 class="gamePrice">R$ {{ game.price }}</h3>
+                                </mat-card-content>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container">
+                                <mat-card-actions class="text-center">
+                                    <input class="cart-input" type="number" [(ngModel)]="game.input"
+                                        [ngModelOptions]="{standalone: true}">
+                                    <button class="cartButton btn btn-success" 
+                                    type="button" (click)="addCart(game)"
+                                        mat-button>Comprar
+                                    </button>
+                                </mat-card-actions>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

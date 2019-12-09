@@ -1,0 +1,69 @@
+.logo {
+    width: 150px;
+    padding: 5px;
+}
+
+.main-headline {
+    font-family: 'vcr';
+    margin-top: 10px;  
+    padding: 10px;
+}
+
+.gameImg {
+    height: 200;
+    width: 300px;
+    transition: all .2s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+.gameImg:hover {
+    transform: scale(1.05);
+}
+
+.gameTitle {
+    text-align: center;
+    font-family: 'vcr', serif;
+    font-size: 20px;
+}
+
+.gamePrice {
+    text-align: center;
+    font-family: 'vcr', serif;
+    font-size: 20px;
+    display: inline
+}
+
+.cartButton {
+    font-family: 'vcr', serif;
+    color: #fff;
+    font-size: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.cartButton:hover {
+    transform: scale(1.1);
+}
+
+.cart-input {
+    background-color: #DADEE1;
+    border-radius: 5px;
+    font-family: 'vcr', serif;
+    color: #000000;
+    font-size: 20px;
+    transition: all .2s ease-in-out;
+    width: 50px;
+    text-align: center;
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.mat-card-header-text {
+    margin: 0;
+}
+
+.lista-jogos {
+    padding: 1rem;
+}   
