@@ -23,10 +23,15 @@
                         <div class="row">
                             <div class="container">
                                 <mat-card-actions class="text-center">
-                                    <input class="cart-input" type="number" [(ngModel)]="game.input"
+                                    <button (click)="minus(game)" class="btn btn-default btnAdd"> - </button>
+
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput [(ngModel)]="game.input"
                                         [ngModelOptions]="{standalone: true}">
-                                    <button class="cartButton btn btn-success" 
-                                    type="button" (click)="addCart(game)"
+                                    </mat-form-field>
+
+                                    <button class="btn btn-default btnAdd" (click)="plus(game)"> + </button>
+                                    <button class="cartButton btn btn-success" type="button" (click)="addCart(game)"
                                         mat-button>Comprar
                                     </button>
                                 </mat-card-actions>

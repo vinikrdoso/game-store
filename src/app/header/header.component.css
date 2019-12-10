@@ -1,7 +1,7 @@
 .header {
     padding: 5px;
     text-align: center;
-    background: #FF2A2A;
+    background: #f44336;
     color: white;
     font-size: 30px;
     font-family: 'vcr', serif;
@@ -19,18 +19,16 @@
 }
 
 .flex {
-	display: flex;
+    display: flex;
 }
 
 .flex-wrap {
     flex-wrap: wrap;
-    
 }
 
 .flex-item-1 {
     flex: 1;
     max-width: 400px;
-    
 }
 
 .container {
@@ -50,5 +48,36 @@
 }
 
 .zerarCarrinhoBtn:hover {
+    transform: scale(1.1);
+}
+
+.mat-toolbar-multiple-rows {
+    width: 20%;
+}
+
+.mat-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+@font-face {
+    font-family: 'vcr';
+    src: url(/assets/fonts/VCR_OSD_MONO_1.001.ttf) format('truetype');
+}
+
+.mat-icon {
+    margin-left: 10px;
+    margin-right: 35px;
+    font-size: 30px;
+}
+
+.mat-flat-button {
+    transition: 0.4s;
+}
+
+.mat-flat-button:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     transform: scale(1.1);
 }

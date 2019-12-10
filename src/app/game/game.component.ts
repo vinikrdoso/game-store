@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { HeaderService } from './../header/header.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,53 +11,66 @@ export class GameComponent implements OnInit {
 
   games = [
     {
+      id: 1,
       title: 'God of War',
       price: 50,
       img: "./assets/images/God-of-War.jpg",
       estoque: 2,
       input: 0,
-      taken: 0
+      comprado: 0,
+      toArr: false,
     },
     {
+      id: 2,
       title: 'Death Stranding',
       price: 70,
       img: "./assets/images/Death-Stranding.jpg",
       estoque: 1,
       input: 0,
-      taken: 0
+      comprado: 0,
+      toArr: false
     },
     {
+      id: 3,
       title: 'The Last Of Us 2',
       price: 40,
       img: "./assets/images/The-Last-Of-Us-2.jpg",
       estoque: 2,
       input: 0,
-      taken: 0
+      comprado: 0,
+      toArr: false
     },
     {
+      id: 4,
       title: 'The Last Guardian',
       price: 60,
       img: "./assets/images/The-Last-Guardian.jpg",
       estoque: 5,
       input: 0,
-      taken: 0
+      comprado: 0,
+      toArr: false
     },
     {
+      id: 5,
       title: 'Crash Bandicoot',
       price: 30,
       img: "./assets/images/Crash.jpg",
       estoque: 3,
       input: 0,
-      taken: 0
+      comprado: 0,
+      toArr: false
     }
   ];
   total: number = 0;
-  quantidade: number = 0 ;
-  taken: any;
+  quantidade: number = 0;
+  comprado: any;
+  subscription: any;
+  carrinho: any;
 
   constructor(private headerService: HeaderService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   addCart(game) {
     if (game.input == 0) {
@@ -65,15 +79,18 @@ export class GameComponent implements OnInit {
       alert(`A quantidade que você selecionou é maior que o estoque disponível. Quantidade disponível: ${game.estoque}`);
     } else {
       alert("Game adicionado ao carrinho!");
-      this.total += game.price * game.input;
-      this.quantidade += game.input;
       game.estoque -= game.input;
-      game.taken += game.input;
+      game.comprado += game.input;
+      game.toArr = true;
+      this.headerService.emitGameRead(game);
+      game.toArr = false;
     }
-    this.headerService.emitGamefRead({total: this.total, quantidade: this.quantidade});
   }
-  
-  zerarCarrinhoGame() {
-    console.log(this.total);
-  }
+
+  plus(item) {
+    item.input++;
+  };
+  minus(item) {
+    item.input--;
+  };
 }

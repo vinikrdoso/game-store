@@ -9,7 +9,7 @@ export class HeaderService {
 
   constructor() { }
 
-  emitGamefRead(carrinho) {
+  emitGameRead(carrinho) {
     this.gameAdded.emit(carrinho);
   }
 

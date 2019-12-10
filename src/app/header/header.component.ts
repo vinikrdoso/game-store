@@ -1,4 +1,3 @@
-import { GameComponent } from './../game/game.component';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HeaderService } from './header.service';
 
@@ -13,27 +12,42 @@ export class HeaderComponent implements OnInit {
 
   @Output() myEvent = new EventEmitter();
 
-  carrinho: any = {
-    quantidade: 0,
-    total: 0
-  }
-  total: any;
-  quantidade: any;
-  taken: any;
+  quantidade: number = 0
+  total: number = 0
+
+  newCarrinho: any = []
+
+
 
   constructor(
     private headerService: HeaderService
   ) { }
 
   ngOnInit() {
-    this.subscription = this.headerService.getGameEmitter().subscribe(carrinho => {
-      this.carrinho.quantidade = carrinho.quantidade
-      this.carrinho.total = carrinho.total
+    this.subscription = this.headerService.getGameEmitter().subscribe(game => {
+      if (game.toArr == true) {
+        debugger;
+        this.newCarrinho.push(game);
+        this.quantidade += game.input;
+        this.total += game.price * game.input;
+      }
+      console.log(this.newCarrinho)
     })
   }
 
-  zerarCarrinho(carrinho) {
-    console.log(carrinho)
-    this.myEvent.emit(null)
+  zerarCarrinho() {
+    debugger;
+    this.quantidade = 0;
+    this.total = 0;
+    this.newCarrinho.forEach(element => {
+      element.estoque += element.comprado;
+      element.comprado = 0;
+    });
+    this.newCarrinho = [];
   }
+
+  atualizaCarrinho(){
+
+  }
+
 }
