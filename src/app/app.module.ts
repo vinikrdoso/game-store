@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PoModule } from '@portinari/portinari-ui';
 import { RouterModule } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     GameComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    ProductInfoComponent
   ],
   imports: [
     BrowserModule,

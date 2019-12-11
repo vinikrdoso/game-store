@@ -41,7 +41,7 @@ import { MatCheckboxModule, MatButtonModule, MatInputModule, MatAutocompleteModu
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatBadgeModule
+    MatBadgeModule,
   ],
   exports: [
     CommonModule,

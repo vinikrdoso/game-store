@@ -9,15 +9,19 @@
             <div *ngFor="let game of games" class="lista-jogos col-md-4">
                 <mat-card>
                     <div class="col-lg-12">
-                        <img [src]="game.img" class="gameImg">
+                        <a [routerLink]="'/game/'+ (game.id)">
+                            <img [src]="game.img" class="gameImg">
+                        </a>
                     </div>
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-12">
-                                <mat-card-content class="text-center">
-                                    <h2 class="gameTitle">{{ game.title }}</h2>
-                                    <h3 class="gamePrice">R$ {{ game.price }}</h3>
-                                </mat-card-content>
+                                <a href="/game/{{ game.id }}">
+                                    <mat-card-content class="text-center">
+                                        <h2 class="gameTitle">{{ game.title }}</h2>
+                                        <h3 class="gamePrice">R$ {{ game.price }}</h3>
+                                    </mat-card-content>
+                                </a>
                             </div>
                         </div>
                         <div class="row">
@@ -26,13 +30,12 @@
                                     <button (click)="minus(game)" class="btn btn-default btnAdd"> - </button>
 
                                     <mat-form-field class="example-full-width">
-                                        <input matInput [(ngModel)]="game.input"
-                                        [ngModelOptions]="{standalone: true}">
+                                        <input matInput [(ngModel)]="game.input" [ngModelOptions]="{standalone: true}">
                                     </mat-form-field>
 
                                     <button class="btn btn-default btnAdd" (click)="plus(game)"> + </button>
-                                    <button class="cartButton btn btn-success" type="button" (click)="addCart(game)"
-                                        mat-button>Comprar
+                                    <button class="cartButton btn btn-success" type="button"
+                                        (click)="gameService.addCart(game)" mat-button>Comprar
                                     </button>
                                 </mat-card-actions>
                             </div>

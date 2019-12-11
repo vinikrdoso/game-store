@@ -1,6 +1,6 @@
-import { element } from 'protractor';
 import { HeaderService } from './../header/header.service';
 import { Component, OnInit } from '@angular/core';
+import { GameService } from './game.service';
 
 @Component({
   selector: 'app-game',
@@ -67,24 +67,12 @@ export class GameComponent implements OnInit {
   subscription: any;
   carrinho: any;
 
-  constructor(private headerService: HeaderService) { }
+  constructor(
+    private headerService: HeaderService,
+    private gameService: GameService,
+    ) { }
 
   ngOnInit() {
-  }
-
-  addCart(game) {
-    if (game.input == 0) {
-      alert("Não há produtos selecionados.");
-    } else if (game.input > game.estoque) {
-      alert(`A quantidade que você selecionou é maior que o estoque disponível. Quantidade disponível: ${game.estoque}`);
-    } else {
-      alert("Game adicionado ao carrinho!");
-      game.estoque -= game.input;
-      game.comprado += game.input;
-      game.toArr = true;
-      this.headerService.emitGameRead(game);
-      game.toArr = false;
-    }
   }
 
   plus(item) {

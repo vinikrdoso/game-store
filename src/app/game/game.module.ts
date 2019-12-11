@@ -1,4 +1,3 @@
-import { HeaderService } from './../header/header.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GameComponent } from './game.component';
@@ -9,7 +8,7 @@ import { GameComponent } from './game.component';
     CommonModule,
   ],
   providers: [
-    HeaderService
+    
   ]
 })
 export class GameModule {
