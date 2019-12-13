@@ -16,7 +16,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="/game/{{ game.id }}">
+                                    <a [routerLink]="'/game/'+ (game.id)">
                                     <mat-card-content class="text-center">
                                         <h2 class="gameTitle">{{ game.title }}</h2>
                                         <h3 class="gamePrice">R$ {{ game.price }}</h3>

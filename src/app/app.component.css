@@ -15,3 +15,12 @@ mat-sidenav {
 main {
     padding: 10px;
 }
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+a {
+    text-decoration: none;
+    color: black;
+}

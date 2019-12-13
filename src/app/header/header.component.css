@@ -1,7 +1,7 @@
 .header {
     padding: 5px;
     text-align: center;
-    background: #f44336;
+    background: #7635E8;
     color: white;
     font-size: 30px;
     font-family: 'vcr', serif;
@@ -55,20 +55,16 @@
     width: 20%;
 }
 
-.mat-success {
-    background-color: #28a745;
-    color: #fff;
-}
-
 @font-face {
     font-family: 'vcr';
     src: url(/assets/fonts/VCR_OSD_MONO_1.001.ttf) format('truetype');
 }
 
 .mat-icon {
-    margin-left: 10px;
-    margin-right: 35px;
+    margin-right: 15px;
+    margin-bottom: 10px;
     font-size: 30px;
+    color: #ffffff;
 }
 
 .mat-flat-button {
@@ -80,6 +76,52 @@
     color: #ffffff;
     border: 1px solid #ffffff;
     transform: scale(1.1);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover, a:active {
+    color: lightgray;
+}
+
+.navigation-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+mat-toolbar {
+    border-radius: 3px;
+}
+
+@media(max-width: 959px) {
+    mat-toolbar {
+        border-radius: 0px;
+    }
+}
+
+.mat-toolbar-multiple-rows {
+    background-color: #7635E8;
+}
+
+.mat-main-purple {
+    background-color: #7635E8;
+}
+
+.mat-flat-button {
+    background-color: #BC47FF;
+    color: #ffffff;
+}
+
+.mat-button-wrapper {
+    color: #ffffff;
+}
+
+.mat-badge-content {
+    background-color: #BC47FF;
 }
 
 a {
@@ -106,3 +148,10 @@ mat-toolbar{
         border-radius: 0px;
     }
 }
+
+.filler {
+    flex: 1 1 auto;
+ }
+ .gap {
+    margin-right: 10px;
+ }

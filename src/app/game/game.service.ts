@@ -14,6 +14,7 @@ export class GameService {
       descricao: 'Vivendo como um homem, fora da sombra dos deuses, Kratos deve se adaptar a terras desconhecidas, ameaças inesperadas e a uma segunda oportunidade de ser pai. Junto ao seu filho, Atreus, os dois vão se aventurar pelas selvagens florestas nórdicas e lutar para cumprir uma missão profundamente pessoal.',
       price: 50,
       img: "./assets/images/God-of-War.jpg",
+      genero: 'Aventura',
       estoque: 2,
       input: 0,
       comprado: 0,
@@ -25,6 +26,7 @@ export class GameService {
       descricao: 'Sam Bridges precisa desbravar um mundo completamente transformado pela Death Stranding. Carregando os vestígios desconectados do nosso futuro em suas mãos, ele embarca em uma jornada para reconectar o mundo despedaçado passo a passo.',
       price: 70,
       img: "./assets/images/Death-Stranding.jpg",
+      genero: 'Aventura',
       estoque: 1,
       input: 0,
       comprado: 0,
@@ -36,6 +38,7 @@ export class GameService {
       descricao: 'Cinco anos depois da jornada perigosa pelos Estados Unidos pós-pandêmicos, Ellie e Joel se estabelecem em Jackson, Wyoming. A vida em uma próspera comunidade de sobreviventes lhes trouxe paz e estabilidade, apesar da ameaça constante dos infectados e de outros sobreviventes mais desesperados. Quando um evento violento interrompe essa paz, Ellie embarca em uma jornada implacável para fazer justiça e encontrar uma solução. Enquanto vai atrás de cada um dos responsáveis, ela se confronta com as repercussões físicas e emocionais devastadoras de suas ações.',
       price: 40,
       img: "./assets/images/The-Last-Of-Us-2.jpg",
+      genero: 'Ação',
       estoque: 2,
       input: 0,
       comprado: 0,
@@ -47,6 +50,7 @@ export class GameService {
       descricao: 'Em uma nação mística e incomum, um garoto descobre uma misteriosa criatura, com quem ele forma um vínculo profundo e indestrutível. A dupla improvável deve ter confiança mútua para escapar de ruínas elevadas e traiçoeiras, repletas de perigos desconhecidos. Vivencie a jornada de uma vida nessa história comovente e sentimental de amizade e confiança.',
       price: 60,
       img: "./assets/images/The-Last-Guardian.jpg",
+      genero: 'Aventura',
       estoque: 5,
       input: 0,
       comprado: 0,
@@ -58,12 +62,14 @@ export class GameService {
       descricao: 'Seu marsupial favorito, Crash Bandicoot™, está de volta! Ele está aprimorado, inspirado e preparado para a coleção de jogos da trilogia insana. Agora você pode experimentar Crash Bandicoot como nunca antes. Gire, pule, golpeie e repita conforme você enfrentar as aventuras e os desafios épicos através dos três jogos que deram início a tudo, Crash Bandicoot™, Crash Bandicoot™ 2: Cortex Strikes Back e Crash Bandicoot™: Warped. Reviva todos os seus momentos favoritos de Crash em seu apogeu gráfico totalmente remasterizado e se prepare para colocar um CRASH nos seus golpes!',
       price: 30,
       img: "./assets/images/Crash.jpg",
+      genero: 'Plataforma',
       estoque: 3,
       input: 0,
       comprado: 0,
       toArr: false
     }
   ];
+  similarGames: any = [];
 
   constructor(private headerService: HeaderService) { }
 
@@ -71,8 +77,8 @@ export class GameService {
     return this.games.find(element => element.id == codigo);
   }
 
-  getAllGames(games) {
-
+  getAllGames() {
+    return this.games;
   }
 
   addCart(game) {
@@ -88,5 +94,15 @@ export class GameService {
       this.headerService.emitGameRead(game);
       game.toArr = false;
     }
+  }
+
+  getSimilarGames(game) {
+    this.similarGames = [];
+    this.games.forEach(element => {
+      if (element.genero == game.genero && element.title != game.title)
+        this.similarGames.push(element)
+      })
+      console.log(this.similarGames)
+      return this.similarGames;
   }
 }

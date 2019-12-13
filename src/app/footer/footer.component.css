@@ -1,12 +1,16 @@
 .footer {
     padding: 5px;
     text-align: center;
-    background: #f44336;
+    background: #7635E8;
     color: white;
     font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.mat-main-purple {
+    background-color: #7635E8;
 }
 
 .logo {

@@ -1,0 +1,44 @@
+<div class="container">
+    <mat-card class="example-card">
+
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <span>Inserir informações</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <form (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input matInput [(ngModel)]="usuario.nome" name="nome">
+                <mat-icon matSuffix>label</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Telefone</mat-label>
+                <input matInput [(ngModel)]="usuario.telefone" name="telefone" [(ngModel)]="usuario.telefone"
+                    name="telefone">
+                <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>CPF</mat-label>
+                <input matInput [(ngModel)]="usuario.cpf" name="cpf" [(ngModel)]="usuario.cpf" name="telefone">
+                <mat-icon matSuffix>fingerprint</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Idade</mat-label>
+                <input matInput [(ngModel)]="usuario.idade" name="idade" [(ngModel)]="usuario.idade" name="telefone">
+                <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+
+            <button type="submit" mat-flat-button color="primary">Salvar</button>
+
+        </form>
+    </mat-card>
+    <mat-card>
+        <div class="container">
+            <app-list></app-list>
+        </div>
+    </mat-card>
+</div>

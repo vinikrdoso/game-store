@@ -1,19 +1,41 @@
-<header>
+<!--<header>
     <nav class="header navbar navbar-expand-lg navbar-dark default-color">
         <div class="container">
             <a [routerLink]="'/'">
-            <img src="assets/images/logo2.png" class="logo">
+                <img src="assets/images/logo2.png" class="logo">
             </a>
+            <mat-toolbar>
+                <mat-toolbar-row>
+                    <mat-icon [matBadge]="quantidade" matBadgeColor="primary">shopping_cart</mat-icon>
+                    <mat-icon [matBadge]="total" matBadgeColor="primary">attach_money</mat-icon>
+                </mat-toolbar-row>
+                <mat-toolbar-row>
+                    <span class="example-spacer"></span>
+                    <div>
+                        <button mat-flat-button class="main-purple" (click)="zerarCarrinho()">
+                            <mat-icon matSuffix>remove_shopping_cart</mat-icon>
+                            Zerar Carrinho
+                        </button>
+                    </div>
+                </mat-toolbar-row>
+            </mat-toolbar>
         </div>
-        <mat-toolbar color="warn">
-            <mat-toolbar-row>
-                <mat-icon [matBadge]="quantidade" matBadgeColor="primary">shopping_cart</mat-icon>
-                <mat-icon [matBadge]="total" matBadgeColor="primary">attach_money</mat-icon>
-            </mat-toolbar-row>
-            <mat-toolbar-row>
-                <span class="example-spacer"></span>
-                <button mat-flat-button [color]="'primary'" (click)="zerarCarrinho()">Zerar Carrinho</button>
-            </mat-toolbar-row>
-        </mat-toolbar>
     </nav>
+</header>-->
+<header>
+    <mat-toolbar color="primary" class="align-middle">
+        <span class="gap"></span>
+        <a [routerLink]="'/'">
+            <img src="assets/images/logo2.png" class="logo">
+        </a>
+        <span class="filler"></span>
+        <div class="align-middle">
+            <mat-icon class="align-middle" [matBadge]="quantidade" matBadgeColor="primary">shopping_cart</mat-icon>
+            <mat-icon class="align-middle" [matBadge]="total" matBadgeColor="primary">attach_money</mat-icon>
+            <button mat-flat-button class="main-purple align-middle" (click)="zerarCarrinho()">
+                <mat-icon matSuffix>remove_shopping_cart</mat-icon>
+                Zerar Carrinho
+            </button>
+        </div>
+    </mat-toolbar>
 </header>

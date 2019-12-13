@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4 d-flex" *ngFor="let usuario of usuarios | async">
+    <div class="card card-body flex-fill">
+      <div class="card-body">
+        <h5 class="card-title">{{usuario.nome}}</h5>
+        <p class="card-text">Telefone: {{usuario.telefone}}</p>
+        <p class="card-text">CPF: {{usuario.cpf}}</p>
+        <p class="card-text">Idade: {{usuario.idade}}</p>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-purple" (click)="edit(usuario, usuario.key)">Editar</button>
+        <button type="button" class="btn btn-danger ml-2" (click)="delete(usuario.key)">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>

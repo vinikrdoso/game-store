@@ -1,0 +1,20 @@
+.mat-toolbar.mat-primary {
+    border-radius: 5px;
+}
+
+.mat-card {
+    margin-top: 10px;
+}
+
+.mat-form-field {
+    margin: 1rem;
+}
+
+.mat-form-field {
+    width: 22%;
+}
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}

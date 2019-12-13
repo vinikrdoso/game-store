@@ -1,6 +1,7 @@
+import { element } from 'protractor';
 import { GameService } from './../game/game.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-info',
@@ -10,23 +11,31 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class ProductInfoComponent implements OnInit {
 
   url: number;
-  game: { id: number; title: string; price: number; img: string; estoque: number; input: number; comprado: number; toArr: boolean; };
+  game: any = {};
+  similarGames: any = [];
 
   constructor(
     private gameService: GameService,
-    private activatedRoute: ActivatedRoute
-  ) { 
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.url = params['id'];
     });
+    router.events.subscribe((val) => {
+      this.initPage();
+    });
+
   }
 
   ngOnInit() {
-    this.getGameInfo();
+    this.initPage();
   }
 
-  getGameInfo() {
-    this.game = this.gameService.getGame(this.url);
+  initPage() {
+    this.similarGames = [];
+    this.getGameInfo();
+    this.gameService.getSimilarGames(this.game);
   }
 
   plus(item) {
@@ -35,4 +44,8 @@ export class ProductInfoComponent implements OnInit {
   minus(item) {
     item.input--;
   };
+
+  getGameInfo() {
+    this.game = this.gameService.getGame(this.url);
+  }
 }
