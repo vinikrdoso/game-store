@@ -1,0 +1,40 @@
+<div class="container">
+    <mat-card class="example-card">
+
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <span>Inserir informações</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <form (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Título</mat-label>
+                <input matInput required [(ngModel)]="game.title" name="title">
+                <mat-icon matSuffix>label</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Preço</mat-label>
+                <input matInput required [(ngModel)]="game.price" name="price">
+                <mat-icon matSuffix>attach_money</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Estoque</mat-label>
+                <input matInput required [(ngModel)]="game.estoque" name="estoque">
+                <mat-icon matSuffix>folder</mat-icon>
+            </mat-form-field>
+
+            <input type="file" required (change)="upload($event)" [(ngModel)]="game.img"  name="img">
+            <progress style="width: 20%;" max="100" [value]="(uploadPercent | async)"></progress>
+
+            <button type="submit" mat-flat-button color="primary">Salvar</button>
+
+        </form>
+    </mat-card>
+    <mat-card>
+        <div class="container">
+            <app-game-list></app-game-list>
+        </div>
+    </mat-card>
+</div>

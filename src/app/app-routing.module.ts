@@ -1,3 +1,4 @@
+import { GameEditComponent } from './games/game-edit/game-edit.component';
 import { GameModule } from './game/game.module';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent},
   { path: 'game/:id', component: ProductInfoComponent},
   { path: 'usuarios', component: EditComponent},
+  { path: 'games', component: GameEditComponent},
 
   { path: '**', redirectTo: '/' },
 ];

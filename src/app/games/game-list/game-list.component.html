@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4 d-flex" *ngFor="let game of games | async">
+    <div class="card card-body flex-fill">
+      <div class="card-body">
+        <img [src]="game.img" class="gameImg">
+        <h5 class="card-title">{{game.title}}</h5>
+        <p class="card-text">Preço: R${{game.price}}</p>
+        <p class="card-text">Estoque: {{game.estoque}}</p>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-purple" (click)="edit(game, game.key)">Editar</button>
+        <button type="button" class="btn btn-danger ml-2" (click)="delete(game.key)">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+
+
+.mat-card {
+    margin: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.d-flex {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-footer {
+    background-color: transparent;
+}
+
+.btn-purple {
+    background-color: #673ab7;
+    color: #ffffff;
+}
+
+.flex-fill {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.gameImg {
+    width: 250px;
+    transition: all .2s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
