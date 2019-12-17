@@ -8,6 +8,9 @@ import { map } from 'rxjs/operators';
 })
 export class GameService {
 
+  similarGames: any = [];
+  games: any = [];
+
   constructor(private db: AngularFireDatabase) { }
 
   insert(game: Game) {
@@ -29,12 +32,30 @@ export class GameService {
       .snapshotChanges()
       .pipe(
         map(changes => {
-          return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+          return changes.map(c => ({ key: c.payload.key, ...(c.payload.val()) as {} }));
         })
       );
   }
 
   delete(key: string) {
     this.db.object(`game/${key}`).remove();
+  }
+
+  getGame(codigo) {
+    return this.games.find(element => element.id == codigo);
+  }
+
+  getAllGames() {
+    return this.games;
+  }
+
+  getSimilarGames(game) {
+    this.similarGames = [];
+    this.games.forEach(element => {
+      if (element.genero == game.genero && element.title != game.title)
+        this.similarGames.push(element)
+    })
+    console.log(this.similarGames)
+    return this.similarGames;
   }
 }
